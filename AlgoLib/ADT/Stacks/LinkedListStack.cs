@@ -15,7 +15,7 @@ public class LinkedListStack<T> : IStack<T>, IEnumerable<T>
     {
         if (IsEmpty())
         {
-            throw new Exception("Error");
+            throw new Exception("Stack underflow");
         }
         else
         {
@@ -38,7 +38,7 @@ public class LinkedListStack<T> : IStack<T>, IEnumerable<T>
         n++;
     }
 
-    public int Size => n;
+    public int Size() => n;
 
     IEnumerator IEnumerable.GetEnumerator()
     {

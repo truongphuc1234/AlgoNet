@@ -23,7 +23,7 @@ public class LinkedListBag<T> : IBag<T>, IEnumerable<T>
 
     public bool IsEmpty() => n == 0;
 
-    public int Size => n;
+    public int Size() => n;
 
     IEnumerator IEnumerable.GetEnumerator()
     {

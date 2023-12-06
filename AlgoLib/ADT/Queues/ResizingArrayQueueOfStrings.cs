@@ -1,20 +1,21 @@
 using System.Collections;
 using AlgoLib.Abstracts;
 
-namespace AlgoLib.ADT.Stacks;
+namespace AlgoLib.ADT.Queues;
 
-public class ResizingCapacityStack<T> : IStack<T>, IEnumerable<T>
+public class ResizingArrayQueue<T> : IQueue<T>, IEnumerable<T>
 {
+
     private T[] a = new T[10];
     private int n;
 
-
-
-    public bool IsEmpty() => n == 0;
-
-    public T Pop()
+    public T Dequeue()
     {
-        T item = a[n];
+        var item = a[0];
+        for (int i = 0; i < n - 1; i++)
+        {
+            a[i] = a[i + 1];
+        }
         a[n] = default;
         n--;
         if (n > 0 && n == a.Length / 4)
@@ -24,7 +25,7 @@ public class ResizingCapacityStack<T> : IStack<T>, IEnumerable<T>
         return item;
     }
 
-    public void Push(T item)
+    public void Enqueue(T item)
     {
         if (n == a.Length)
         {
@@ -34,19 +35,21 @@ public class ResizingCapacityStack<T> : IStack<T>, IEnumerable<T>
         a[n] = item;
     }
 
+    public IEnumerator<T> GetEnumerator()
+    {
+        for (int i = 0; i > n; i++)
+        {
+            yield return a[i];
+        }
+    }
+
+    public bool IsEmpty() => n == 0;
+
     public int Size() => n;
 
     IEnumerator IEnumerable.GetEnumerator()
     {
         return GetEnumerator();
-    }
-
-    public IEnumerator<T> GetEnumerator()
-    {
-        for (int i = n - 1; i >= 0; i--)
-        {
-            yield return a[i];
-        }
     }
 
     private void Resize(int max)

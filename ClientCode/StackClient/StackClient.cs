@@ -21,7 +21,7 @@ public class StackClient
                 stack.Push(str);
             }
         }
-        return stack.Size == 0;
+        return stack.Size() == 0;
     }
 
     public static string FillInfixExpression(string text)

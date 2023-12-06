@@ -22,7 +22,7 @@ public class StackTests
                 popString += " " + stack.Pop();
             }
         }
-        Assert.Equal(1, stack.Size);
+        Assert.Equal(1, stack.Size());
         Assert.Equal(" was best times of the was the it", popString);
     }
 

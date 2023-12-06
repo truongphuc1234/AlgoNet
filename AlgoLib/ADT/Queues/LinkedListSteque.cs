@@ -4,12 +4,13 @@ using AlgoLib.ADT.LinkedList;
 
 namespace AlgoLib.ADT.Queues;
 
-public class LinkedListQueue<T> : IQueue<T>, IEnumerable<T>
+public class LinkedListSteque<T> : ISteque<T>, IEnumerable<T>
 {
     private Node<T>? first;
     private Node<T>? last;
     private int n;
 
+    #region Enumerator
     IEnumerator IEnumerable.GetEnumerator()
     {
         return GetEnumerator();
@@ -24,6 +25,7 @@ public class LinkedListQueue<T> : IQueue<T>, IEnumerable<T>
             current = current.Next;
         }
     }
+    #endregion
 
     public void Enqueue(T item)
     {
@@ -44,19 +46,33 @@ public class LinkedListQueue<T> : IQueue<T>, IEnumerable<T>
         n++;
     }
 
-    public T Dequeue()
-    {
-        var item = first.Item;
-        first = first.Next;
-        if (IsEmpty())
-        {
-            last = null;
-        }
-        n--;
-        return item;
-    }
-
     public bool IsEmpty() => first == null && last == null;
 
     public int Size() => n;
+
+    public void Push(T item)
+    {
+        Node<T> oldFirst = first;
+        first = new Node<T>
+        {
+            Item = item,
+            Next = oldFirst,
+        };
+        n++;
+    }
+
+    public T Pop()
+    {
+        if (IsEmpty())
+        {
+            throw new Exception("Stack underflow");
+        }
+        else
+        {
+            T item = first.Item;
+            first = first.Next;
+            n--;
+            return item;
+        }
+    }
 }
