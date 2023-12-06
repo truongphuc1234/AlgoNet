@@ -40,25 +40,11 @@ public class StackTests
         Assert.False(StackClient.CheckParentheses(text));
     }
 
-    // [Fact]
-    // public void Test_Parentheses_1_3_4_2()
-    // {
-    //     var stack = new LinkedListStack<char>();
-    //     var text = "[(])";
-    //     var map = new Dictionary<char, char> { { '[', ']' }, { ']', '[' }, { '(', ')' }, { ')', '(' }, { '{', '}' }, { '}', '{' }, };
-
-
-    //     foreach (char str in text)
-    //     {
-    //         if (map[str] == stack.Peek())
-    //         {
-    //             stack.Pop();
-    //         }
-    //         else
-    //         {
-    //             stack.Push(str);
-    //         }
-    //     }
-    //     Assert.Equal(4, stack.Size);
-    // }
+    [Fact]
+    public void Test_Fill_Inflix()
+    {
+        var text = "1 + 2 ) * 3 - 4 ) * 5 - 6 ) ) )";
+        var result = "( ( 1 + 2 ) * ( ( 3 - 4 ) * ( 5 - 6 ) ) )";
+        Assert.Equal(result, StackClient.FillInfixExpression(text));
+    }
 }

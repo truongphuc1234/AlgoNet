@@ -6,17 +6,25 @@ namespace AlgoLib.ADT.Stacks;
 
 public class LinkedListStack<T> : IStack<T>, IEnumerable<T>
 {
-    private Node<T> first;
+    private Node<T>? first;
     private int n;
 
-    public bool IsEmpty() => n == 0;
+    public bool IsEmpty() => first == null;
 
     public T Pop()
     {
-        T item = first.Item;
-        first = first.Next;
-        n--;
-        return item;
+        if (IsEmpty())
+        {
+            throw new Exception("Error");
+        }
+        else
+        {
+            T item = first.Item;
+            first = first.Next;
+            n--;
+            return item;
+        }
+
     }
 
     public void Push(T item)
