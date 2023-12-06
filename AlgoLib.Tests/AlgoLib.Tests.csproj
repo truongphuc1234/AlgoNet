@@ -22,4 +22,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AlgoLib\AlgoLib.csproj" />
+    <ProjectReference Include="..\ClientCode\ClientCode.csproj" />
+  </ItemGroup>
+
 </Project>
