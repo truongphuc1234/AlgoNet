@@ -21,8 +21,9 @@ public class FixedCapacityStackOfStrings(int cap) : IStack<string>
         a[n] = item;
     }
 
-    public int Size() => n;
-
+    public int Size => n;
+    
+    //1.3.1
     public bool IsFull()
     {
         return n == a.Length;

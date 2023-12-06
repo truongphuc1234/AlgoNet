@@ -21,5 +21,5 @@ public class FixedCapacityStack<T>(int cap) : IStack<T>
         a[n] = item;
     }
 
-    public int Size() => n;
+    public int Size => n;
 }

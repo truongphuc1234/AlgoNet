@@ -34,7 +34,7 @@ public class ResizingCapacityStack<T> : IStack<T>, IEnumerable<T>
         a[n] = item;
     }
 
-    public int Size() => n;
+    public int Size => n;
 
     IEnumerator IEnumerable.GetEnumerator()
     {

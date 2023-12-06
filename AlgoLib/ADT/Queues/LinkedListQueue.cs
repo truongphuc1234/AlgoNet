@@ -17,7 +17,7 @@ public class LinkedListQueue<T> : IQueue<T>, IEnumerable<T>
 
     public IEnumerator<T> GetEnumerator()
     {
-        Node<T>? current = first;
+        var current = first;
         while (current != null)
         {
             yield return current.Item;
@@ -27,7 +27,7 @@ public class LinkedListQueue<T> : IQueue<T>, IEnumerable<T>
 
     public void Enqueue(T item)
     {
-        Node<T> oldLast = last;
+        var oldLast = last;
         last = new Node<T>
         {
             Item = item,
@@ -46,7 +46,7 @@ public class LinkedListQueue<T> : IQueue<T>, IEnumerable<T>
 
     public T Dequeue()
     {
-        T item = first.Item;
+        var item = first.Item;
         first = first.Next;
         if (IsEmpty())
         {
@@ -56,7 +56,7 @@ public class LinkedListQueue<T> : IQueue<T>, IEnumerable<T>
         return item;
     }
 
-    public bool IsEmpty() => n == 0;
+    public bool IsEmpty() => first == null && last == null;
 
-    public int Size() => n;
+    public int Size => n;
 }

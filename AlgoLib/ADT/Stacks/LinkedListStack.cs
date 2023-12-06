@@ -30,7 +30,7 @@ public class LinkedListStack<T> : IStack<T>, IEnumerable<T>
         n++;
     }
 
-    public int Size() => n;
+    public int Size => n;
 
     IEnumerator IEnumerable.GetEnumerator()
     {
@@ -45,5 +45,10 @@ public class LinkedListStack<T> : IStack<T>, IEnumerable<T>
             yield return current.Item;
             current = current.Next;
         }
+    }
+
+    public T? Peek()
+    {
+        return IsEmpty() ? default : first.Item;
     }
 }

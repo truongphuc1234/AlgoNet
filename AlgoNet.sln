@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{6A22AB09-FF90-4EDB-BF4A-076BDCE405D8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoLib", "AlgoLib\AlgoLib.csproj", "{A2480412-797D-41CC-A093-48490C3CFBFA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgoLib.Tests", "AlgoLib.Tests\AlgoLib.Tests.csproj", "{F1E28611-DEC1-47D2-BA2A-2DD2ADF78970}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StdLib", "StdLib\StdLib.csproj", "{5C269FC3-1F7D-4B27-919E-3CC46CAB17CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientCode", "ClientCode\ClientCode.csproj", "{6596C152-846A-49DD-B60C-FDFDD5D9DEB1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,5 +36,9 @@ Global
 		{5C269FC3-1F7D-4B27-919E-3CC46CAB17CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C269FC3-1F7D-4B27-919E-3CC46CAB17CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C269FC3-1F7D-4B27-919E-3CC46CAB17CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6596C152-846A-49DD-B60C-FDFDD5D9DEB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6596C152-846A-49DD-B60C-FDFDD5D9DEB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6596C152-846A-49DD-B60C-FDFDD5D9DEB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6596C152-846A-49DD-B60C-FDFDD5D9DEB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
